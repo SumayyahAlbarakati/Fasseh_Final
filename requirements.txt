@@ -4,3 +4,7 @@ matplotlib
 moviepy
 whisper
 ultralytics
+matplotlib
+numpy
+arabic-reshaper
+python-bidi
