@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startButton = document.getElementById('startButton');
+            const stopButton = document.getElementById('stopButton');
+            const downloadButton = document.getElementById('downloadButton');
+            const preview = document.getElementById('preview');
+            const timerInput = document.getElementById('timerInput');
+            const timerDisplay = document.getElementById('timerDisplay');
+
+            let mediaRecorder;
+            let recordedChunks = [];
+            let timer;
+
+            async function startRecording() {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                preview.srcObject = stream;
+                preview.play(); // تأكد من تشغيل الفيديو فور بدء التسجيل
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        recordedChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                    const url = URL.createObjectURL(blob);
+                    downloadButton.href = url;
+                    downloadButton.download = 'recording.webm';
+                    recordedChunks = [];
+                };
+
+                mediaRecorder.start();
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                downloadButton.disabled = true;
+
+                const duration = parseInt(timerInput.value, 10) || 0;
+                if (duration > 0) {
+                    let timeLeft = duration;
+                    timerDisplay.textContent = Time left: ${timeLeft} seconds;
+
+                    timer = setInterval(() => {
+                        timeLeft--;
+                        timerDisplay.textContent = Time left: ${timeLeft} seconds;
+                        if (timeLeft <= 0) {
+                            stopRecording();
+                        }
+                    }, 1000);
+                }
+            }
+
+            function stopRecording() {
+                clearInterval(timer);
+                mediaRecorder.stop();
+                startButton.disabled = false;
+                stopButton.disabled = true;
+                downloadButton.disabled = false;
+                timerDisplay.textContent = '';
+                preview.srcObject.getTracks().forEach(track => track.stop());
+            }
+
+            startButton.addEventListener('click', startRecording);
+            stopButton.addEventListener('click', stopRecording);
+        });
+    </script>
+
+</head>
+<body>
+    <header> 
+        <div class="navbar"> 
+            <nav> 
+                <ul> 
+                    <li><a href="{{ url_for('index') }}">الصفحة الرئيسية</a></li>
+                    <li><a href="{{ url_for('index') }}#sec-1fbd">النماذج المستخدمة</a></li>
+                    <li><a href="{{ url_for('feedback') }}">تواصل معنا</a></li>
+                    <li><a href="{{ url_for('about') }}">من نحن؟</a></li>
+                </ul>
+            </nav>
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="لوقو فصيح">
+        </div>
+    </header>
+    <main class="content">
+
+        <div class="upload-box">
+            <h1 style="font-size: large; color:black;">رفع فيديو</h1>
+
+            <form   class="upload-box" method="POST" action="{{ url_for('result') }}" enctype="multipart/form-data">
+                 <div>
+                  <label for="file" style="font-size: large;">اختر مقطع من جهازك</label>
+                  <input type="file" id="file" name="file" multiple />
+                </div>
+                <div>
+                  <button class="video-page-button">تاكيد</button>
+                </div>
+              </form>
+        </div>
+        <div class="vid-record">
+            <p>مسجل الفيديو</p>
+            <video id="preview" muted autoplay style="width: 640px; height: 480px; border: 2px solid #ccc; border-radius: 4px; background-color: black;"></video>
+            
+            <div id="timerContainer">
+                <label for="timerInput">حدد مدة التسجيل (بالثواني):</label>
+                <input type="number" id="timerInput" min="1">
+            </div>
+            
+            <div>
+                <button id="startButton" class="video-page-button">تسجيل</button>
+                <button id="stopButton" class="video-page-button" disabled>ايقاف التسجيل</button>
+                <button id="downloadButton" class="video-page-button" disabled>تحميل</button>
+            </div>
+            <p id="timerDisplay" style="font-size: large;"></p>
+        </div>
+    </main>
+    <footer>
+        <p style="margin: 0%;">جميع الحقوق محفوظة</p>
+    </footer>    
+</body>
+</html>

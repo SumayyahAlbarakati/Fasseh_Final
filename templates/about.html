@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+    <div class="navbar"> 
+        <nav> 
+            <ul>
+                <li><a href="{{ url_for('index') }}">الصفحة الرئيسية</a></li>
+                <li><a href="{{ url_for('index') }}#sec-1fbd">النماذج المستخدمة</a></li>
+                <li><a href="{{ url_for('feedback') }}">تواصل معنا</a></li>
+            </ul>
+        </nav>
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="لوقو فصيح"> 
+    </div>
+    </header>
+    <main>
+        <div class="about-us">
+           <h1 style="font-size: xX-large;">
+            من نحن
+           </h1>
+           <p style="font-size: x-large;">
+             فريق مكون من شباب وشابات مكة المكرمة طموحون لتقديم خدمات رقمية مدعومة بأحدث تقنيات الذكاء الاصطناعي.<br><br>
+             نسعى الى تحسين ودعم لغتنا العربية و نشرها في مجالات شتى.
+           </p>
+        </div>
+    </main>
+    <footer>
+        <p style="margin: 0%;">جميع الحقوق محفوظة</p>
+    </footer> 
+</body>
+</html>

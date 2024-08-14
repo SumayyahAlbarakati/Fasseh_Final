@@ -1,0 +1,94 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d259b125-3db9-4f4c-848e-b05b2c0446a0</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>FassehTest.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>FassehTest</Name>
+    <RootNamespace>FassehTest</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="dashboard.py" />
+    <Compile Include="FassehTest.py" />
+    <Compile Include="Recording.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Confidence_Score.pt" />
+    <Content Include="Eyes_Gaze.pt" />
+    <Content Include="Face_Expression.pt" />
+    <Content Include="Stand.pt" />
+    <Content Include="templates\about.html" />
+    <Content Include="templates\feedback.html" />
+    <Content Include="templates\images\2187458-14cf0498.png" />
+    <Content Include="templates\images\2187458.png" />
+    <Content Include="templates\images\3721901-e4435dd6.png" />
+    <Content Include="templates\images\3721901.png" />
+    <Content Include="templates\images\414330ad.svg" />
+    <Content Include="templates\images\4144748-b8aad770.png" />
+    <Content Include="templates\images\4144748.png" />
+    <Content Include="templates\images\4144771-40ef15a1.png" />
+    <Content Include="templates\images\4144771.png" />
+    <Content Include="templates\images\5377190-9e528cd5.png" />
+    <Content Include="templates\images\5377190.png" />
+    <Content Include="templates\images\53c4c417.svg" />
+    <Content Include="templates\images\6537f30a.svg" />
+    <Content Include="templates\images\6f461f60.svg" />
+    <Content Include="templates\images\776587db.svg" />
+    <Content Include="templates\images\8006248-5e287b6f.png" />
+    <Content Include="templates\images\8006248.png" />
+    <Content Include="templates\images\8392451-41db31cc.png" />
+    <Content Include="templates\images\8392451.png" />
+    <Content Include="templates\images\Albaik.png" />
+    <Content Include="templates\images\caac4e54.svg" />
+    <Content Include="templates\images\d754debf.svg" />
+    <Content Include="templates\images\default-image.jpg" />
+    <Content Include="templates\images\div.jpg" />
+    <Content Include="templates\images\Fasseh_Logo.png" />
+    <Content Include="templates\images\header_white.jpg" />
+    <Content Include="templates\images\logo.jpeg" />
+    <Content Include="templates\images\May.jfif" />
+    <Content Include="templates\images\Shawarmer.jpg" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\index.js" />
+    <Content Include="templates\pics\annotated_video.mp4" />
+    <Content Include="templates\pics\background.webp" />
+    <Content Include="templates\pics\background1.png" />
+    <Content Include="templates\pics\backgroundGrad.gif" />
+    <Content Include="templates\pics\header.png" />
+    <Content Include="templates\pics\header_1.png" />
+    <Content Include="templates\pics\light_logo.png" />
+    <Content Include="templates\pics\logo.png" />
+    <Content Include="templates\pics\mohh.png" />
+    <Content Include="templates\result.html" />
+    <Content Include="templates\styles.css" />
+    <Content Include="templates\upload.html" />
+    <Content Include="Test1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="templates\" />
+    <Folder Include="templates\images\" />
+    <Folder Include="templates\pics\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">الصفحة الرئيسية</a></li>
+                    <li><a href="index.html#sec-1fbd">النماذج المستخدمة</a></li>
+                    <li><a href="result.html">النتائج</a></li>
+                    <li><a href="about.html">من نحن؟</a></li>
+                </ul>
+            </nav>
+            <img class="logo" src="pics/logo.png" alt="لوقو فصيح">
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <h2 class="u-text-1">أرسل لنا ملاحظاتك</h2>
+            <form action="#" method="post" class="feedback-form">
+                <div>
+                    <label for="name" class="text-small">الاسم:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email" class="text-small">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="phone" class="text-small">رقم الهاتف:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="feedback" class="text-small">المحتوى:</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">إرسال</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p style="margin: 0%;">جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

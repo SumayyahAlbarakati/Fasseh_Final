@@ -1,0 +1,261 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    direction: rtl; /* Ensure right-to-left layout */
+
+}
+body{
+    background: url(images/backgroundGrad.gif);
+	  background-attachment: fixed;
+	  
+}
+
+.header, .main {
+    text-align: center;
+}
+header{
+    background-color: #faf1e2;
+}
+.navbar {
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf1e2;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-left: 20px; /* Adjust for RTL */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+.logo {
+    width: 100px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto; /* Automatically adjust row height */
+    gap: 10px; /* Space between items */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box; /* Include padding in the total width/height */
+}
+
+.container::before {
+	  content: "";
+  position: absolute;
+  
+  
+  width: 100%;
+  height: 100%;
+  background-image: url('images/header_1.png');
+background-repeat: no-repeat;
+
+  background-size: 100%; /* لتغطية كامل الحاوية */
+  padding-top:450px;
+  background-position: center; /* لمركز الصورة */
+  z-index: -1; /* لوضع الصورة خلف المحتوى */
+}
+.pic {
+    grid-column: 2 / 3; /* First column of the first row */
+    grid-row: 1; /* First row */ 
+    text-align: center; /* Center content horizontally */
+}
+
+.image {
+    width: 600px;
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes inline spacing issues */
+    margin: 0 auto; /* Centers image horizontally */
+}
+
+.content{
+    text-align: center;
+    font-size: xx-large;
+    color:#faf1e2;
+	margin:-20px;
+}
+.start a {
+    font-size: xx-large;
+    color:#faf1e2;
+	padding:10px 100px;
+	border-radius:100px;
+	background:#070045;
+    text-align: center; 
+    text-decoration: none;
+}
+
+
+footer{
+	height:400px;
+    font-size: smaller;
+	margin: -20px;
+    text-align: center;
+    color:#faf1e2;
+  background-image: url('images/header.png');
+background-repeat: no-repeat;
+  background-size: 100%; /* لتغطية كامل الحاوية */
+  background-position: center; /* لمركز الصورة */
+  
+    display: flex;
+     justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column-reverse; /* Adjust for RTL and responsive design */
+    }
+
+    .navbar ul {
+        text-align: center;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+.u-repeater {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items horizontally */
+  padding:20px;
+  text-align: justify;
+}
+
+.u-list-item {
+  list-style: none; /* Remove default list styling */
+  width: 20%;
+  margin: 16px; /* Add spacing between items */
+  color: #faf1e2;
+  
+  padding:16px;
+  border-radius:12px;
+}
+
+.item {
+	
+  display: flex;
+  flex-direction: column; /* Stack divs vertically */
+  align-items: center; /* Center divs horizontally */
+  justify-content: center; /* Center divs vertically within the container */
+   
+   padding:10px 0px
+  
+}
+.inside-item{
+	
+}
+
+.text-small{
+    font-size: medium;
+	color:#070045;
+	line-height: normal;
+	padding:36px;
+	width:500px;
+	text-align:Center;
+	text-align: justify;
+}
+
+.header-img{
+	width:100%;
+	margin:120px 0;
+	
+}
+
+.tasks{
+	margin-top:300px;
+	height:600px;
+}
+
+.logo-light{
+	display:inline;
+	width:120px;
+	margin-bottom:-50px;
+}
+
+.detect{
+	margin-top:500px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+	
+}
+.result-container::before{
+
+	content: "";
+	position: absolute;
+
+
+	width: 100%;
+	height: 100%;
+	background-image: url('images/header_1.png');
+	background-repeat: no-repeat;
+
+	background-size: 100%; /* لتغطية كامل الحاوية */
+	margin-top:750px;
+	background-position: center; /* لمركز الصورة */
+	z-index: -1; /* لوضع الصورة خلف المحتوى */
+}
+
+
+.u-text-1{
+	text-align: center;
+	color: #faf1e2;
+    font-size: xx-large;
+}
+
+
+.charts{
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	padding:20px;
+	width:70%;
+	height:500px;
+	border: 6px solid #faf1e2;
+	border-radius:12px;
+	
+}
+
+.emotions-model{
+	width:70%;
+}
+.emotions-model img{
+	width:90%;
+}
+
+.others-model{
+	width: 20%;
+}
+
+.others-model img{
+	width: 90%;
+}

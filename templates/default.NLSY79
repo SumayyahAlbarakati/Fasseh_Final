@@ -1,0 +1,20 @@
+R0000100
+R0173600
+R0214700
+R0214800
+       Specs        Score
+                      Physically_attacked  
+          Cyber_bullied_in_past_12_months  
+  Most_of_the_time_or_always_felt_lonely   
+          Other_students_kind_and_helpful   
+                        Physical_fighting   
+              Parents_understand_problems   
+                Miss_school_no_permission   
+                              Felt_lonely   
+                                      Sex
+									  
+just create streamlit UI of (
+Physically_attacked,Cyber_bullied_in_past_12_months,
+Most_of_the_time_or_always_felt_lonely,
+Other_students_kind_and_helpful,
+Physical_figh,Parents_understand_problems,Miss_school_no_permission,Felt_lonely,Sex)features in the model to predict wither a student got Bullied or not and generate the most likely reason
